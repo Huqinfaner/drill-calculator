@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>钻孔参数计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>钻孔参数计算器</h1>
+        
+        <!-- 输入模块 -->
+        <div class="input-group">
+            <label>钻头直径 (mm):</label>
+            <input type="number" id="diameter" step="0.1" placeholder="例如：5.0">
+        </div>
+        
+        <div class="input-group">
+            <label>钻头材料:</label>
+            <select id="toolMaterial">
+                <option value="hss_6542">普通6542高速钢</option>
+                <option value="hss_m35">M35高速钢</option>
+                <option value="carbide">硬质合金</option>
+                <option value="coated_carbide">涂层硬质合金</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <label>被加工材料:</label>
+            <select id="workMaterial">
+                <option value="stainless_steel">马氏体不锈钢</option>
+                <option value="aluminum">铝合金</option>
+                <option value="titanium">钛合金</option>
+            </select>
+        </div>
+        
+        <button onclick="calculate()">计算参数</button>
+        
+        <!-- 结果输出 -->
+        <div class="result">
+            <h3>计算结果</h3>
+            <p>转速 N: <span id="rpm">--</span> r/min</p>
+            <p>进给速度 Vf: <span id="feedRate">--</span> mm/min</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
